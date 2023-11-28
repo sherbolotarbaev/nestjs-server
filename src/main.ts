@@ -21,5 +21,6 @@ async function start() {
     console.log(`📢 Server starting on: http://localhost:${port}/ ⚡️`),
   );
 }
+
 start();
 export default start;
