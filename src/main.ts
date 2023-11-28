@@ -4,26 +4,21 @@ import { ValidationPipe } from '@nestjs/common';
 import cookieParser from 'cookie-parser';
 
 async function start() {
-  try {
-    const app = await NestFactory.create(AppModule);
-    const port = process.env.PORT || 999;
+  const app = await NestFactory.create(AppModule);
+  const port = process.env.PORT || 999;
 
-    const corsOptions = {
-      origin: process.env.FRONTEND_BASE_URL,
-      credentials: true,
-      methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
-    };
+  const corsOptions = {
+    origin: process.env.FRONTEND_BASE_URL,
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  };
 
-    app.enableCors(corsOptions);
-    app.useGlobalPipes(new ValidationPipe());
-    app.use(cookieParser());
+  app.enableCors(corsOptions);
+  app.useGlobalPipes(new ValidationPipe());
+  app.use(cookieParser());
 
-    await app.listen(port, () =>
-      console.log(`📢 Server starting on: http://localhost:${port}/ ⚡️`),
-    );
-  } catch (e) {
-    console.error('❌ Failed to start server', e);
-    process.exit(1);
-  }
+  await app.listen(port, () =>
+    console.log(`📢 Server starting on: http://localhost:${port}/ ⚡️`),
+  );
 }
 start();
