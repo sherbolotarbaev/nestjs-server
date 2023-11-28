@@ -5,11 +5,11 @@ import * as cookieParser from 'cookie-parser';
 
 async function start() {
   try {
-    const app = await NestFactory.create(AppModule, { cors: true });
+    const app = await NestFactory.create(AppModule);
     const port = process.env.PORT || 999;
 
     const corsOptions = {
-      origin: process.env.FRONTEND_BASE_URL || 'http://localhost:3000',
+      origin: process.env.FRONTEND_BASE_URL,
       credentials: true,
       methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
     };
