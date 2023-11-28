@@ -22,7 +22,8 @@ async function start() {
       console.log(`📢 Server starting on: http://localhost:${port}/ ⚡️`),
     );
   } catch (e) {
-    throw new Error('❌ Failed to start server', e);
+    console.error('❌ Failed to start server', e);
+    process.exit(1);
   }
 }
 start();
