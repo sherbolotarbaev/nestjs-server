@@ -6,7 +6,7 @@ import type { CorsOptions } from '@nestjs/common/interfaces/external/cors-option
 
 async function start() {
   const app = await NestFactory.create(AppModule, { cors: true });
-  const port = process.env.PORT || 3000;
+  const port = 7987;
 
   const corsOptions: CorsOptions = {
     origin: 'http://localhost:3000',
