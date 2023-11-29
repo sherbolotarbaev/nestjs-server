@@ -22,6 +22,8 @@ async function start() {
   await app.listen(port, () =>
     console.log(`📢 Server starting on: http://localhost:${port}/ ⚡️`),
   );
+
+  return app;
 }
 start();
 export default start;
