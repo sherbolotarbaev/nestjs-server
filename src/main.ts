@@ -1,7 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
-import cookieParser from 'cookie-parser';
+import * as cookieParser from 'cookie-parser';
 import type { CorsOptions } from '@nestjs/common/interfaces/external/cors-options.interface';
 
 async function start() {
@@ -15,7 +15,7 @@ async function start() {
     maxAge: 24 * 60 * 60 * 5,
   };
 
-  app.enableCors();
+  app.enableCors(corsOptions);
   app.useGlobalPipes(new ValidationPipe());
   app.use(cookieParser());
 
