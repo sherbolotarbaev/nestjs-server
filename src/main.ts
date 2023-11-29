@@ -6,6 +6,7 @@ import type { CorsOptions } from '@nestjs/common/interfaces/external/cors-option
 
 async function start() {
   const app = await NestFactory.create(AppModule, { cors: true });
+  const port = process.env.PORT || 3000;
 
   const corsOptions: CorsOptions = {
     origin: 'http://localhost:3000',
@@ -18,8 +19,8 @@ async function start() {
   app.useGlobalPipes(new ValidationPipe());
   app.use(cookieParser());
 
-  await app.listen(9999, () =>
-    console.log(`📢 Server starting on: http://localhost:${9999}/ ⚡️`),
+  await app.listen(port, () =>
+    console.log(`📢 Server starting on: http://localhost:${port}/ ⚡️`),
   );
 }
 start();
