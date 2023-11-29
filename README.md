@@ -20,4 +20,4 @@ $ pnpm start:prod
 ## Stay in touch
 
 - Author - [Sherbolot Arbaev](https://sherbolotarbaev.pro/)
-- Website - [https://nestjs.com](https://nestjs.com/)
+- Website - [https://nest-js-api.vercel.app](https://nest-js-api.vercel.app/)
