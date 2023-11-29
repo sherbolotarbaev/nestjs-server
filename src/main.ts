@@ -15,7 +15,7 @@ async function start() {
     maxAge: 24 * 60 * 60 * 5,
   };
 
-  app.enableCors(corsOptions);
+  app.enableCors();
   app.useGlobalPipes(new ValidationPipe());
   app.use(cookieParser());
 
