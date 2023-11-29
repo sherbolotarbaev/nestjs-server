@@ -8,7 +8,7 @@ async function start() {
   const port = process.env.PORT || 3000;
 
   const corsOptions = {
-    origin: process.env.FRONTEND_BASE_URL,
+    origin: 'http://localhost:3000',
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
   };
@@ -22,4 +22,3 @@ async function start() {
   );
 }
 start();
-export default start;
